@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:oqtepa_food_menu_app/onboarding/onboarding.dart';
 import 'package:oqtepa_food_menu_app/screens/home_page.dart';
@@ -23,6 +21,11 @@ class _sign_inState extends State<sign_in> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [Text("someone")],
+        ),
+      ),
       appBar: AppBar(
         title: Padding(
           padding: const EdgeInsets.fromLTRB(90, 0, 0, 0),
@@ -60,11 +63,12 @@ class _sign_inState extends State<sign_in> {
             Row(
               children: [
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
                       padding: const EdgeInsets.fromLTRB(15, 0, 0, 2),
                       child: Text(
-                        "Enter your Phone number or Email",
+                        "Enter your Phone number ",
                         style: TextStyle(fontSize: 16),
                       ),
                     ),
@@ -107,8 +111,8 @@ class _sign_inState extends State<sign_in> {
                               hoverColor: Colors.green,
                               fillColor: Colors.green,
                               border: OutlineInputBorder(),
-                              hintText: "Email",
-                              suffix: Icon(Icons.email_outlined)),
+                              hintText: "Phone Number",
+                              suffix: Icon(Icons.phone_android)),
                         ),
                       ),
                     ),
@@ -119,9 +123,9 @@ class _sign_inState extends State<sign_in> {
                         child: TextFormField(
                           decoration: InputDecoration(
                               focusColor: Colors.green,
-                              hoverColor: Colors.green,
+                              hoverColor: Color.fromARGB(255, 119, 255, 124),
                               fillColor: Colors.green,
-                              hintText: "Password",
+                              hintText: "Code",
                               border: OutlineInputBorder(),
                               suffix: Icon(Icons.visibility_off)),
                         ),

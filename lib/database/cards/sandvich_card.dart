@@ -1,14 +1,8 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_import
-
-import 'dart:ui';
-
 import 'package:easy_localization/easy_localization.dart';
-
-import 'categories.dart';
-
 import 'package:flutter/material.dart';
+import 'package:oqtepa_food_menu_app/database/categories.dart';
 
-Widget myItem(Foods list, context) {
+Widget mySandvichItem(Sandvich sandvich, context) {
   return Padding(
     padding: const EdgeInsets.only(left: 10.0, right: 10, top: 10),
     child: SizedBox(
@@ -33,8 +27,9 @@ Widget myItem(Foods list, context) {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage(list.ImageUrl)),
-                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                            image: AssetImage(sandvich.ImageUrl)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(8.0)),
                         color: Colors.redAccent,
                       ),
                     ),
@@ -53,24 +48,24 @@ Widget myItem(Foods list, context) {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  list.name,
-                                  style: TextStyle(
+                                  sandvich.name,
+                                  style: const TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 16),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text(list.detail),
+                                Text(sandvich.detail),
                                 Padding(
                                   padding: const EdgeInsets.only(
                                     top: 20,
                                     bottom: 0,
                                   ),
                                   child: Text(
-                                    list.prise,
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
+                                    sandvich.prise,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ),
                                 Row(
@@ -79,7 +74,8 @@ Widget myItem(Foods list, context) {
                                   children: [
                                     IconButton(
                                         onPressed: () {},
-                                        icon: Icon(Icons.favorite_outline)),
+                                        icon:
+                                            const Icon(Icons.favorite_outline)),
                                     Container(
                                       child: Row(
                                         mainAxisAlignment:
@@ -87,7 +83,7 @@ Widget myItem(Foods list, context) {
                                         children: [
                                           Text(
                                             "select".tr(),
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 14),
                                           )
@@ -95,7 +91,7 @@ Widget myItem(Foods list, context) {
                                       ),
                                       height: 30,
                                       width: 100,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                           color:
                                               Color.fromARGB(255, 182, 27, 27),
                                           borderRadius: BorderRadius.all(
@@ -119,7 +115,7 @@ Widget myItem(Foods list, context) {
 }
 
 // ignore: non_constant_identifier_names
-Widget horizontalCard(Foods list) {
+Widget horizontalSandvichCard(Sandvich sandvich) {
   return Column(
     children: [
       Padding(
@@ -145,9 +141,9 @@ Widget horizontalCard(Foods list) {
                           decoration: BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: AssetImage(list.ImageUrl)),
+                                image: AssetImage(sandvich.ImageUrl)),
                             borderRadius:
-                                BorderRadius.all(Radius.circular(8.0)),
+                                const BorderRadius.all(Radius.circular(8.0)),
                             color: Colors.redAccent,
                           ),
                         ),
@@ -164,40 +160,40 @@ Widget horizontalCard(Foods list) {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Text(
-                                    list.name,
-                                    style: TextStyle(
+                                    sandvich.name,
+                                    style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16),
                                   ),
                                 ],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             Row(
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.all(8),
+                                  padding: const EdgeInsets.all(8),
                                   child: Text(
-                                    list.prise,
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
+                                    sandvich.prise,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ),
                                 IconButton(
                                     onPressed: () {},
-                                    icon: Icon(Icons.favorite_outline)),
+                                    icon: const Icon(Icons.favorite_outline)),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.only(left: 30),
+                                  padding: const EdgeInsets.only(left: 30),
                                   child: Container(
                                     child: Row(
                                       mainAxisAlignment:
@@ -205,7 +201,7 @@ Widget horizontalCard(Foods list) {
                                       children: [
                                         Text(
                                           "select".tr(),
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Colors.white,
                                               fontSize: 14),
                                         )
@@ -213,7 +209,7 @@ Widget horizontalCard(Foods list) {
                                     ),
                                     height: 30,
                                     width: 100,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                         color: Color.fromARGB(255, 182, 27, 27),
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(5))),
@@ -229,7 +225,7 @@ Widget horizontalCard(Foods list) {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      list.detail,
+                      sandvich.detail,
                     ),
                   )
                 ],
